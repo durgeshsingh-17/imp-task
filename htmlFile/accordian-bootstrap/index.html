@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- INTERNAL CSS -->
+
+    <style>
+        .header-prop {
+            font-family: Proxima Nova;
+            font-weight: 600;
+            font-style: normal;
+            color: #111111;
+            background-color: white !important;
+        }
+
+        .card-prop {
+            font-family: Proxima Nova;
+            font-weight: normal;
+            font-style: normal;
+            color: #111111;
+        }
+
+        .border-bottom-color-card {
+            border-bottom: 1px solid rgba(0, 0, 0, .125) !important;
+            cursor: pointer;
+        }
+
+        i {
+            float: right;
+        }
+    </style>
+
+    <!-- Bootstrap -->
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
+        integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+
+    <!-- For Icon Use-->
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- JS -->
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF"
+        crossorigin="anonymous"></script>
+
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="container mt-5">
+        <div class="accordion" id="accordionExample">
+            <div class="card mb-3 border-bottom-color-card" id="icon1">
+                <div class="card-header header-prop card-header-custom" id="headingOne">
+                    <p class="mb-0 collapsed" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false"
+                        aria-controls="collapseOne">
+                        Restrictive diets aren't the answer.
+                        <span><i class="fa fa-chevron-circle-down"></i></span>
+                    </p>
+                </div>
+                <div id="collapseOne" class="collapse show" aria-labelledby="headingOne"
+                    data-parent="#accordionExample">
+                    <div class="card-body card-prop">
+                        Some placeholder content for the first accordion panel. This panel is shown by default, thanks
+                        to the class.
+                    </div>
+                </div>
+            </div>
+            <div class="card mb-3 border-bottom-color-card" id="icon2">
+                <div class="card-header header-prop" id="headingTwo">
+                    <p class="mb-0 collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false"
+                        aria-controls="collapseTwo">
+                        Healthy food and dished can taste great
+                        <span><i class="fa fa-chevron-circle-down"></i></span>
+                    </p>
+                </div>
+                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+                    <div class="card-body card-prop">
+                        Some placeholder content for the second accordion panel. This panel is hidden by default.
+                    </div>
+                </div>
+            </div>
+            <div class="card mb-3 border-bottom-color-card" id="icon3">
+                <div class="card-header header-prop" id="headingThree">
+                    <p class="mb-0 collapsed" data-toggle="collapse" data-target="#collapseThree " aria-expanded="false"
+                        aria-controls="collapseThree">
+                        How you eat should be guided by your genetic data
+                        <span><i class="fa fa-chevron-circle-down"></i></span>
+                    </p>
+                </div>
+                <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+                    <div class="card-body card-prop">
+                        And lastly, the placeholder content for the third and final accordion panel. This panel is
+                        hidden by default.
+                    </div>
+                </div>
+            </div>
+            <div class="card border-bottom-color-card" id="icon4">
+                <div class="card-header header-prop" id="headingFour">
+                    <p class="mb-0 collapsed" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false"
+                        aria-controls="collapseFour">
+                        Carbohydrates, fats, and protain are important
+                        <span><i class="fa fa-chevron-circle-down"></i></span>
+                    </p>
+                </div>
+                <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordionExample">
+                    <div class="card-body card-prop">
+                        And lastly, the placeholder content for the third and final accordion panel. This panel is
+                        hidden by default.
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <script>
+        document.querySelector('#icon1').addEventListener('click', function () {
+            const icon = this.querySelector('i');
+
+            if (icon.classList.contains('fa-chevron-circle-down')) {
+                icon.classList.remove('fa-chevron-circle-down');
+                icon.classList.add('fa-chevron-circle-up');
+            } else {
+                icon.classList.remove('fa-chevron-circle-up');
+                icon.classList.add('fa-chevron-circle-down');
+            }
+        });
+
+        document.querySelector('#icon2').addEventListener('click', function () {
+            const icon = this.querySelector('i');
+
+            if (icon.classList.contains('fa-chevron-circle-down')) {
+                icon.classList.remove('fa-chevron-circle-down');
+                icon.classList.add('fa-chevron-circle-up');
+            } else {
+                icon.classList.remove('fa-chevron-circle-up');
+                icon.classList.add('fa-chevron-circle-down');
+            }
+        });
+
+        document.querySelector('#icon3').addEventListener('click', function () {
+            const icon = this.querySelector('i');
+
+            if (icon.classList.contains('fa-chevron-circle-down')) {
+                icon.classList.remove('fa-chevron-circle-down');
+                icon.classList.add('fa-chevron-circle-up');
+            } else {
+                icon.classList.remove('fa-chevron-circle-up');
+                icon.classList.add('fa-chevron-circle-down');
+            }
+        });
+
+        document.querySelector('#icon4').addEventListener('click', function () {
+            const icon = this.querySelector('i');
+
+            if (icon.classList.contains('fa-chevron-circle-down')) {
+                icon.classList.remove('fa-chevron-circle-down');
+                icon.classList.add('fa-chevron-circle-up');
+            } else {
+                icon.classList.remove('fa-chevron-circle-up');
+                icon.classList.add('fa-chevron-circle-down');
+            }
+        });
+    </script>
+</body>
+
+</html>

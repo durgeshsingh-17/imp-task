@@ -1,0 +1,25 @@
+/* #background_Image_banner{
+
+    background-image: url('./img1.png');
+
+    border-bottom-left-radius: 48% 40%;
+    
+    border-bottom-right-radius: 42% 38%;
+
+    height: 350px;
+    
+    background-color: red;
+    
+    clip-path: polygon(0% 54%, 0% 75%, 36% 100%, 46% 100%, 65% 99%, 85% 87%, 100% 76%, 100% 66%, 100% 70%, 100% 1%, 0% 1%);
+
+    clip-path: polygon(0% 50%, 0% 50%, 27% 70%, 50% 80%, 52% 80%, 65% 75%, 100% 50%, 100% 90%, 100% 60%, 100% 0%, 0% 0%);
+    }    
+ */
+
+ #background_Image_banner {
+    background-image: url('./img1.png');
+    height: 350px;
+    background-color: rgb(0, 204, 255);
+    transform: scaleX(1.5);
+    border-radius: 0 0 50% 50%/0 0 100% 100%;
+ }

@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Drop Down</title>
+
+	<style>
+		[data-from-dependent] {
+			display: none;
+		}
+
+		[data-from-dependent].display {
+			display: initial;
+		}
+	</style>
+</head>
+<body>
+	<select id="source" name="source" data-dependent-selector="#status">
+		<option value="0" >Use the online booking setting</option>
+	  	<option data-dependent-opt="days">Days</option>
+	  	<option data-dependent-opt="week">week</option>
+	  	<option data-dependent-opt="month">Month</option>
+	</select>
+
+	<select id="status" name="status">
+		<option value="1" >Use the days booking setting</option>
+        <option value="1">1</option>
+		<option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+        <option value="8">8</option>
+        <option value="9">9</option>
+        <option value="10">10</option>
+        <option value="11">11</option>
+        <option value="12">12</option>
+
+        <option data-from-dependent="week">13</option>
+		<option data-from-dependent="week">14</option>
+		<option data-from-dependent="week">15</option>
+		<option data-from-dependent="week">16</option>
+		<option data-from-dependent="week">17</option>
+		<option data-from-dependent="week">18</option>
+		<option data-from-dependent="week">19</option>
+		<option data-from-dependent="week">20</option>
+		<option data-from-dependent="week">21</option>
+		<option data-from-dependent="week">22</option>
+		<option data-from-dependent="week">23</option>
+		<option data-from-dependent="week">24</option>
+		<option data-from-dependent="week">25</option>
+		<option data-from-dependent="week">26</option>
+		<option data-from-dependent="week">27</option>
+		<option data-from-dependent="week">28</option>
+		<option data-from-dependent="week">29</option>
+		<option data-from-dependent="week">30</option>
+		<option data-from-dependent="week">31</option>
+
+		<option data-from-dependent="days">13</option>
+		<option data-from-dependent="days">14</option>
+		<option data-from-dependent="days">15</option>
+		<option data-from-dependent="days">16</option>
+		<option data-from-dependent="days">17</option>
+		<option data-from-dependent="days">18</option>
+		<option data-from-dependent="days">19</option>
+		<option data-from-dependent="days">20</option>
+		<option data-from-dependent="days">21</option>
+		<option data-from-dependent="days">22</option>
+		<option data-from-dependent="days">23</option>
+		<option data-from-dependent="days">24</option>
+		<option data-from-dependent="days">25</option>
+		<option data-from-dependent="days">26</option>
+		<option data-from-dependent="days">27</option>
+		<option data-from-dependent="days">28</option>
+		<option data-from-dependent="days">29</option>
+		<option data-from-dependent="days">30</option>
+		<option data-from-dependent="days">31</option>
+		<option data-from-dependent="week">32</option>
+		<option data-from-dependent="week">33</option>
+		<option data-from-dependent="week">34</option>
+		<option data-from-dependent="week">35</option>
+		<option data-from-dependent="week">36</option>
+		<option data-from-dependent="week">37</option>
+		<option data-from-dependent="week">38</option>
+		<option data-from-dependent="week">39</option>
+		<option data-from-dependent="week">40</option>
+		<option data-from-dependent="week">41</option>
+		<option data-from-dependent="week">42</option>
+		<option data-from-dependent="week">43</option>
+		<option data-from-dependent="week">44</option>
+		<option data-from-dependent="week">45</option>
+		<option data-from-dependent="week">46</option>
+		<option data-from-dependent="week">47</option>
+		<option data-from-dependent="week">48</option>
+		<option data-from-dependent="week">49</option>
+		<option data-from-dependent="week">50</option>
+		<option data-from-dependent="week">51</option>
+		<option data-from-dependent="week">52</option>
+	</select>
+	<br>
+	<br>
+
+	<script>
+		document.addEventListener("change", checkSelect);
+
+		function checkSelect(evt) {
+			const origin = evt.target;
+
+			if (origin.dataset.dependentSelector) {
+				const selectedOptFrom = origin.querySelector("option:checked")
+				.dataset.dependentOpt || "n/a";
+				const addRemove = optData => (optData || "") === selectedOptFrom 
+				? "add" : "remove";
+				document.querySelectorAll(`${origin.dataset.dependentSelector} option`)
+				.forEach( opt => 
+					opt.classList[addRemove(opt.dataset.fromDependent)]("display") );
+			}
+		}
+
+		
+	</script>
+</body>
+</html>
+
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Select Value</title>
+</head>
+<body>
+	<select>
+		<option value="">Choose</option>
+		<option value="1">Days</option>
+		<option value="2">Weeks</option>
+		<option value="3">Month</option>
+	</select>
+
+	<select id="days">
+		<option value="">--select here--</option>
+	</select>
+
+	<script>
+		const s = document.getElementById('days')
+		for(let i = 1; i <= 52; i++) {
+		    const option = document.createElement('option');
+		    option.value = i;
+		    option.textContent = i;
+		    s.appendChild(option)
+		    // console.log(i)
+		    console.log(option)
+		}
+	</script>
+</body>
+</html>
